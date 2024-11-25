@@ -1,0 +1,43 @@
+public class StudentDemo{
+
+    public static void main(String[] args){
+
+        Student tim = new Student("900", "Tim");
+        System.out.println(tim);
+        System.out.println("FRESHMAN ordinal: " + tim.getStudentYear().ordinal());
+
+        Student taylor = new Student("901", "Taylor", StudentYear.JUNIOR);
+        System.out.println(taylor);
+        System.out.println("JUNIOR ordinal: " + taylor.getStudentYear().ordinal());
+
+        //Checking ordinal values
+        if (tim.getStudentYear().equals(taylor.getStudentYear())){
+            System.out.println("Tim and Taylor are the same year!");
+
+        }else if(tim.getStudentYear().compareTo(taylor.getStudentYear()) > 0){
+            System.out.println("Tim is closer to graduating");
+
+        }else{
+            System.out.println("Taylor is closer to graduating");
+        }
+
+        switch(taylor.getStudentYear()){
+            case FRESHMAN:
+                System.out.println("They are a first-year student.");
+                break;
+            case SOPHOMORE:
+                System.out.println("They are a second-year student.");
+                break;
+            case JUNIOR:
+                System.out.println("They are a third-year student.");
+                break;
+            case SENIOR:
+                System.out.println("They are a fourth-year student.");
+                break;
+            case GRADUATE:
+                System.out.println("They are a grad student.");
+                break;
+
+        }
+    }
+}
